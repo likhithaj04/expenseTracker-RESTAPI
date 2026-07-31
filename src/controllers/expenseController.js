@@ -1,11 +1,13 @@
 import express from 'express'
 
 export const addExpense=(req,res)=>{
-const {title,amount,catogary,date}=req.body;
+    console.log("hit");
+    
+ const {title,amount,category,date}=req.body;
 
 
 
-  res.send({message:"success",data:{title,amount,catogary,date}})
+  res.send({message:"success",data:{title,amount,category,date}})
 
 }
 
