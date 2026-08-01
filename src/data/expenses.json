@@ -89,5 +89,19 @@
     "amount": 150,
     "category": "stationary",
     "date": "2026-08-01"
+  },
+  {
+    "id": "0027091d-77b8-4b32-9ca9-b555830bc1bc",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "d02533db-867a-4dc8-b4e7-aa1a0d84044c",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
   }
 ]

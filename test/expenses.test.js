@@ -1,5 +1,5 @@
 import request from 'supertest'
-import app from '../app.js'
+import app from '../src/app.js'
 
 
 describe("Expense API", () => {
@@ -103,4 +103,25 @@ test("DELETE /expense/:id should delete an expense", async () => {
   expect(deleteResponse.body.message).toBe("Expense Deleted Successfully");
 });
 
+test("GET /expense/monthly should return monthly summary", async () => {
+  const response = await request(app)
+    .get("/expense/monthly")
+    .query({ month: "2026-08" });
+
+  expect(response.statusCode).toBe(200);
+  expect(response.body.success).toBe(true);
+  expect(response.body.message).toBe("Monthly summary retrieved successfully");
+
+  expect(response.body.data.month).toBe("2026-08");
+  expect(typeof response.body.data.totalExpenses).toBe("number");
+  expect(typeof response.body.data.numberOfExpenses).toBe("number");
+
+  expect(response.body.data.highestExpense).toHaveProperty("title");
+  expect(response.body.data.highestExpense).toHaveProperty("amount");
+  expect(response.body.data.highestExpense).toHaveProperty("category");
+
+  expect(response.body.data.lowestExpense).toHaveProperty("title");
+  expect(response.body.data.lowestExpense).toHaveProperty("amount");
+  expect(response.body.data.lowestExpense).toHaveProperty("category");
+});
 })

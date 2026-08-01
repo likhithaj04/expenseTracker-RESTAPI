@@ -88,3 +88,42 @@ const categorytotal=filteredCategory.reduce((acc,curr)=>{
     })
    }
 }
+
+
+export const getMonthlySummary = async (req, res) => {
+    const { month } = req.query;
+
+    const data = await fs.readFile(filePath, "utf-8");
+    const expenses = JSON.parse(data);
+
+    const monthlyExpenses = expenses.filter(expense =>
+        expense.date.startsWith(month)
+    );
+
+    const totalExpenses = monthlyExpenses.reduce((sum, expense) => sum + expense.amount,
+        0);
+
+    const highestExpense = monthlyExpenses.reduce((max, expense) =>expense.amount > max.amount ? expense : max);
+  
+    const lowestExpense = monthlyExpenses.reduce((min, expense) =>expense.amount < min.amount ? expense : min);
+
+    res.send({
+        success: true,
+        message: "Monthly summary retrieved successfully",
+        data: {
+            month,
+            totalExpenses,
+            numberOfExpenses: monthlyExpenses.length,
+            highestExpense: {
+                title: highestExpense.title,
+                amount: highestExpense.amount,
+                category: highestExpense.category
+            },
+            lowestExpense: {
+                title: lowestExpense.title,
+                amount: lowestExpense.amount,
+                category: lowestExpense.category
+            }
+        }
+    })
+  }
