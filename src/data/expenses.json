@@ -1,0 +1,30 @@
+[
+  {
+    "id": "2ef6cb2f-a0dd-47f6-9677-62646613ce4b",
+    "title": "food",
+    "amount": 250,
+    "category": "Dining",
+    "date": "2026-07-31"
+  },
+  {
+    "id": "90805dc6-af7f-482a-b420-c65b07fe7575",
+    "title": "Groceries",
+    "amount": 1250,
+    "category": "Food",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "f61ef9e3-ef48-4d95-9479-b6671132c525",
+    "title": "pen",
+    "amount": 30,
+    "category": "stationary",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "c507585f-7bf0-4f89-869d-8d318150be4c",
+    "title": "watercolors",
+    "amount": 100,
+    "category": "stationary",
+    "date": "2026-08-01"
+  }
+]
