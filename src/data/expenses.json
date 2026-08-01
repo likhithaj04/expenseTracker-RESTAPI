@@ -26,5 +26,68 @@
     "amount": 100,
     "category": "stationary",
     "date": "2026-08-01"
+  },
+  {
+    "id": "f71c6403-710a-4b03-b357-718a332d02a3",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "38842e48-60c3-45f1-98d1-6070662c0e90",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "01d92cdf-3516-4de8-955c-e45dab1e74d2",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "536e1e95-1fff-482f-a32f-178bf423162b",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "0cc3c671-424e-4443-9bb1-895ff0a41d9c",
+    "title": "facewash",
+    "amount": 300,
+    "category": "skincare",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "cdc78faf-0182-4329-b294-1fd8237b1f44",
+    "title": "sunscreen",
+    "amount": 1300,
+    "category": "skincare",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "0f756ac8-5e0a-4b04-beff-e393e0e567d5",
+    "title": "sunscreen",
+    "amount": 1300,
+    "category": "skincare",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "f033aafc-ec66-44a4-919c-3a1285caecf1",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
+  },
+  {
+    "id": "7009a231-40b9-476b-8103-582017b5d149",
+    "title": "sketch pencils",
+    "amount": 150,
+    "category": "stationary",
+    "date": "2026-08-01"
   }
 ]

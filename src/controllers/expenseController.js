@@ -20,7 +20,7 @@ export const addExpense = async (req, res) => {
 
   // console.log(allExpenses);
 
-  res.status(200).json({ message: "success", data: { title, amount, category, date } })
+  res.status(200).json({ message: "success", data: newExpense })
 
 }
 
@@ -34,7 +34,7 @@ export const addExpense = async (req, res) => {
    if(category){
       const fileterdData=expense.filter(item=>item.category==category)
          res.status(200).json({"success":true,
-          message:fileterdData.length>0?"Expenses retrieved successfully":"No Expense found for this category",
+          message:fileterdData.length>0?"Expenses retrieved successfully":`No Expense found for this ${category}`,
           data:fileterdData})
 
    }
@@ -62,8 +62,29 @@ else{
   
 }
 
-export const totlExpense=(req,res)=>{
+export const totlExpense=async(req,res)=>{
   const {category}=req.query;
-  console.log(category);
+
+  const data=await fs.readFile(filePath,"utf-8")
+  const allExpense=JSON.parse(data)
   
+   if(category){
+     const filteredCategory= allExpense.filter(item=>item.category==category)
+// const total=categorytotal.map(item=>item.amount)    
+
+const categorytotal=filteredCategory.reduce((acc,curr)=>{
+  return acc+curr.amount
+},0)
+ res.status(200).json({
+      "success":true,message:`${category} data fetched successfully`,data:categorytotal
+    })
+   }  
+   else{
+    const total=allExpense.reduce((acc,curr)=>{
+      return acc+curr.amount
+    },0)
+    res.status(200).json({
+      "success":true,message:"Total expense fetched successfully",data:total
+    })
+   }
 }
